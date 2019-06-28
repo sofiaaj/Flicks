@@ -114,7 +114,7 @@ public class MainActivity extends Activity implements MovieAdapter.ViewHolder.on
     @Override
     public void onMovieClick(int position) {
         Intent intent = new Intent(MainActivity.this, MovieDetails.class);
-       Movie current = movies.get(position);
+        Movie current = movies.get(position);
         intent.putExtra("Title", current.getTitle());
         intent.putExtra("BackdropPath", current.getBackdropPath());
         intent.putExtra("Overview", current.getOverview());
