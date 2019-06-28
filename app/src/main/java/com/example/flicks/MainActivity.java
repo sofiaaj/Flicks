@@ -37,6 +37,7 @@ public class MainActivity extends Activity implements MovieAdapter.ViewHolder.on
     MovieAdapter adapter;
     Config config;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +51,8 @@ public class MainActivity extends Activity implements MovieAdapter.ViewHolder.on
         getConfiguration();
     }
 
+    // Makes a request to movieDB to get list of current movies. We loop through the array
+    // of movies and create new movie objects for each.
 
     private void getNowPlaying(){
         String url = API_BASE_URL + "/movie/now_playing";
@@ -77,6 +80,8 @@ public class MainActivity extends Activity implements MovieAdapter.ViewHolder.on
             }
         });
     };
+
+    // Configuration makes a request to get images by accessing the config class
 
     private void getConfiguration(){
         String url = API_BASE_URL + "/configuration";
@@ -112,6 +117,8 @@ public class MainActivity extends Activity implements MovieAdapter.ViewHolder.on
         }
     }
 
+    // Redirects to a movie-specific page, sending in relevant info on the particular movie
+
     @Override
     public void onMovieClick(int position) {
         Intent intent = new Intent(MainActivity.this, MovieDetails.class);
@@ -123,7 +130,6 @@ public class MainActivity extends Activity implements MovieAdapter.ViewHolder.on
         intent.putExtra("voteAverage", current.getVoteAverage());
         String imgURL = config.getImageUrl(config.getBackdropSize(), current.getBackdropPath());
         intent.putExtra("imgURL", imgURL);
-        //getReviews();
         startActivity(intent);
     }
 }

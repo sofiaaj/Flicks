@@ -45,7 +45,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
 
 
 
-
+// Gets the view we want to display.
 
     @NonNull
     @Override
@@ -58,6 +58,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
         return new ViewHolder(movieView, onMovieListener);
     }
 
+    // Gets the data and feeds it into the elements
+
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Movie movie = movies.get(position);
@@ -67,6 +69,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
         holder.tvTitle.setText(movie.getTitle());
         holder.tvOverview.setText(movie.getOverview());
         holder.tvOverview.setMovementMethod(new ScrollingMovementMethod());
+
+        // Ternary statement  so we use the appropriate image depending on the size we need.
+
         String imageUrl = isPortrait ? config.getImageUrl(config.getPosterSize(), movie.getPosterPath()) : config.getImageUrl(config.getBackdropSize(), movie.getBackdropPath());
         int placeHolderId = isPortrait ? R.drawable.flicks_movie_placeholder : R.drawable.flicks_backdrop_placeholder;
         ImageView imageView = isPortrait ? holder.ivPosterImage : holder.ivBackdropImage;
@@ -92,6 +97,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
         TextView tvTitle;
         TextView tvOverview;
         onMovieListener onMovieListener;
+
+        // Specifies the items contained in our view and gives them a click listener so that users
+        // can press on a movie and be redirected to further information.
 
         public ViewHolder(@NonNull View itemView, onMovieListener onMovieListener) {
             super(itemView);

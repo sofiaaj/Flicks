@@ -13,9 +13,8 @@ public class Movie {
     private Double voteAverage;
 
 
-    public Double getVoteAverage() {
-        return voteAverage;
-    }
+// Gets information from the JSON object and feeds it into the different fields so that information
+// can be gotten from the movie class
 
     public Movie(JSONObject object) throws JSONException {
         title = object.getString("title");
@@ -50,4 +49,8 @@ public class Movie {
     }
 
     public String getReview(){ return review; }
+
+    public Double getVoteAverage() {
+        return voteAverage;
+    }
 }

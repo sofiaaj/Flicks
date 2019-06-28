@@ -9,6 +9,8 @@ public class Config {
     String posterSize;
     String backdropSize;
 
+    // Accesses the movie JSON object to get the necessary parameters to get the image url
+
     public Config(JSONObject object) throws JSONException {
         JSONObject images = object.getJSONObject("images");
         imageBaseUrl = images.getString("secure_base_url");

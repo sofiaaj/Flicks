@@ -5,6 +5,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
+
+// Displays an image for 5 seconds before moving on to the main project.
+// Designed a logo to display during this time.
+
 public class SplashActivity extends AppCompatActivity {
     private Handler mWaitHandler = new Handler();
 
@@ -34,6 +38,8 @@ public class SplashActivity extends AppCompatActivity {
             }
         }, 5000);  // Give a 5 seconds delay.
     }
+
+    // Destroys it so that if a user presses back, they aren't taking back to the splash page.
 
     @Override
     public void onDestroy() {
