@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -31,6 +32,7 @@ public class MovieDetails extends Activity {
     public final static String PAGE = "page";
     AsyncHttpClient client;
     String review;
+    RatingBar rvVoteAverage;
 
 
     public void getReviews(){
@@ -78,6 +80,11 @@ public class MovieDetails extends Activity {
         ivBackdropImage = (ImageView) findViewById(R.id.ivBackdropImage);
         tvReview = (TextView) findViewById(R.id.tvReview);
         tvReview.setText(review);
+        rvVoteAverage = (RatingBar) findViewById(R.id.rbVoteAverage);
+        int voteAverage = (int) (getIntent().getDoubleExtra("voteAverage", 0.0));
+        voteAverage /=  2;
+        rvVoteAverage.setRating((voteAverage));
+        Log.i("vote", Integer.toString(voteAverage));
         int placeHolderId = R.drawable.flicks_backdrop_placeholder;
         Glide.with(getApplicationContext())
                 .load(getIntent().getStringExtra("imgURL"))
