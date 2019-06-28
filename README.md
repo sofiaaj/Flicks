@@ -38,7 +38,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I didn't know the stretch goals had guides to go with them so I did them on my own but I think I didn't use the best methods since there was some repetitive code in my overall app. 
 
 ## Open-source libraries used
 
