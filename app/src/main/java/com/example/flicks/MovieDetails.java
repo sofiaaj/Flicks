@@ -69,17 +69,12 @@ public class MovieDetails extends Activity {
 
     }
 
-    public void launchTrailerActivity(View view){
-
-        Intent i = new Intent(MovieDetails.this, MovieTrailerActivity.class);
-        i.putExtra("videoKey", videoID);
-        startActivity(i);
-
-    }
 
 
 
-
+    // Similar to get reviews, this method makes a new request to access the movie ID
+    // key we need to make a request to Youtube to show the trailer. We will pass
+    // this key to the trailer activity
 
     public void getVideoID(){
         client = new AsyncHttpClient();
@@ -103,6 +98,16 @@ public class MovieDetails extends Activity {
             }
 
         });
+    }
+
+    // Redirects to the trailer activity and passes in the key so that youtube yields the video
+
+    public void launchTrailerActivity(View view){
+
+        Intent i = new Intent(MovieDetails.this, MovieTrailerActivity.class);
+        i.putExtra("videoKey", videoID);
+        startActivity(i);
+
     }
 
 

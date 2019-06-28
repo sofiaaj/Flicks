@@ -21,6 +21,7 @@ public class Config {
     }
 
     public String getImageUrl(String size, String path){
+
         return String.format("%s%s%s", imageBaseUrl, size, path);
     }
 

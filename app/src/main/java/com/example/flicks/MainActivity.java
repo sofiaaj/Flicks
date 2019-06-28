@@ -51,8 +51,7 @@ public class MainActivity extends Activity implements MovieAdapter.ViewHolder.on
         getConfiguration();
     }
 
-    // Makes a request to movieDB to get list of current movies. We loop through the array
-    // of movies and create new movie objects for each.
+    // Makes a request to movieDB to get list of current movies.
 
     private void getNowPlaying(){
         String url = API_BASE_URL + "/movie/now_playing";
@@ -62,6 +61,10 @@ public class MainActivity extends Activity implements MovieAdapter.ViewHolder.on
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 try {
+
+                    // Loop through the array and store each element as a new movie type
+                    // so we can store the information we need
+
                     JSONArray results = response.getJSONArray("results");
                     for(int i = 0; i < results.length(); i++){
                         Movie movie = new Movie(results.getJSONObject(i));
@@ -84,6 +87,8 @@ public class MainActivity extends Activity implements MovieAdapter.ViewHolder.on
     // Configuration makes a request to get images by accessing the config class
 
     private void getConfiguration(){
+
+        // base URL requested by API plus the specific parameters
         String url = API_BASE_URL + "/configuration";
         RequestParams params = new RequestParams();
         params.put(API_KEY_PARAM, getString(R.string.api_key));
@@ -94,6 +99,8 @@ public class MainActivity extends Activity implements MovieAdapter.ViewHolder.on
                 super.onSuccess(statusCode, headers, response);
 
                 try {
+
+                    // create new configuration object and store necessary information
                     config = new Config(response);
                     Log.i(TAG, String.format("Loaded configuration with imageBaseUrl %s and posterSize %s", config.getImageBaseUrl(), config.getPosterSize()));
                     adapter.setConfig(config);
