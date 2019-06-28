@@ -17,14 +17,14 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tvTitle"
+        app:layout_constraintEnd_toStartOf="@+id/tvTitle2"
         app:layout_constraintHorizontal_bias="0.27"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:color/black" />
 
     <TextView
-        android:id="@+id/tvTitle"
+        android:id="@+id/tvTitle2"
         android:layout_width="295dp"
         android:layout_height="29dp"
         android:layout_marginTop="8dp"
@@ -34,14 +34,14 @@
         android:text="Movie Title"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@android:color/background_light"
-        app:layout_constraintBottom_toTopOf="@+id/tvOverview"
+        app:layout_constraintBottom_toTopOf="@+id/tvOverview2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/ivPosterImage"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvOverview"
+        android:id="@+id/tvOverview2"
         android:layout_width="296dp"
         android:layout_height="115dp"
         android:layout_marginStart="8dp"
@@ -55,5 +55,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivPosterImage"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle2" />
 </android.support.constraint.ConstraintLayout>

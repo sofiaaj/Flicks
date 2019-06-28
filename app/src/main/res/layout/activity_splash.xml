@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/AppThemeNoBar"
+    android:theme="@style/AppTheme"
     android:background="#292D31"
     tools:context=".SplashActivity">
 

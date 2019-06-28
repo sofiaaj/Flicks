@@ -1,6 +1,7 @@
 package com.example.flicks;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -112,15 +113,11 @@ public class MainActivity extends Activity implements MovieAdapter.ViewHolder.on
 
     @Override
     public void onMovieClick(int position) {
-
-        Toast.makeText(getApplicationContext(), "Hi", Toast.LENGTH_LONG).show();
-//        Intent intent = new Intent(MainActivity.this, MovieDetails.class);
-//        Movie current = movies.get(position);
-//        intent.putExtra("Title", current.getTitle());
-//        intent.putExtra("Poster", current.getPosterPath());
-//        intent.putExtra("Overview", current.getOverview());
-//        startActivity(intent);
-
-
+        Intent intent = new Intent(MainActivity.this, MovieDetails.class);
+       Movie current = movies.get(position);
+        intent.putExtra("Title", current.getTitle());
+        intent.putExtra("BackdropPath", current.getBackdropPath());
+        intent.putExtra("Overview", current.getOverview());
+        startActivity(intent);
     }
 }

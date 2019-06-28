@@ -96,8 +96,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
             super(itemView);
             ivPosterImage = (ImageView) itemView.findViewById(R.id.ivPosterImage);
             ivBackdropImage = (ImageView) itemView.findViewById(R.id.ivBackdropImage);
-            tvTitle = (TextView) itemView.findViewById(R.id.tvTitle);
-            tvOverview = (TextView) itemView.findViewById(R.id.tvOverview);
+            tvTitle = (TextView) itemView.findViewById(R.id.tvTitle2);
+            tvOverview = (TextView) itemView.findViewById(R.id.tvOverview2);
             this.onMovieListener = onMovieListener;
             itemView.setOnClickListener(this);
 
