@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.flicks.Models.Config;
 
 public class MovieDetails extends Activity {
@@ -14,13 +15,6 @@ public class MovieDetails extends Activity {
     ImageView ivBackdropImage;
     Config config;
 
-    public Config getConfig() {
-        return config;
-    }
-
-    public void setConfig(Config config) {
-        this.config = config;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,5 +24,12 @@ public class MovieDetails extends Activity {
         tvTitle2.setText(getIntent().getStringExtra("Title"));
         tvOverview2 = (TextView) findViewById(R.id.tvOverview2);
         tvOverview2.setText(getIntent().getStringExtra("Overview"));
+        ivBackdropImage = (ImageView) findViewById(R.id.ivBackdropImage);
+        int placeHolderId = R.drawable.flicks_backdrop_placeholder;
+        Glide.with(getApplicationContext())
+                .load(getIntent().getStringExtra("imgURL"))
+                .placeholder(placeHolderId)
+                .error(placeHolderId)
+                .into(ivBackdropImage);
     }
 }

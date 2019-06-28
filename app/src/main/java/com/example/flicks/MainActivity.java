@@ -118,6 +118,8 @@ public class MainActivity extends Activity implements MovieAdapter.ViewHolder.on
         intent.putExtra("Title", current.getTitle());
         intent.putExtra("BackdropPath", current.getBackdropPath());
         intent.putExtra("Overview", current.getOverview());
+        String imgURL = config.getImageUrl(config.getBackdropSize(), current.getBackdropPath());
+        intent.putExtra("imgURL", imgURL);
         startActivity(intent);
     }
 }
