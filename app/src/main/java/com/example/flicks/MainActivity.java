@@ -104,6 +104,7 @@ public class MainActivity extends Activity implements MovieAdapter.ViewHolder.on
         });
     }
 
+
     private void logError(String message, Throwable error, boolean alertUser){
         Log.e(TAG, message, error);
         if(alertUser){
@@ -118,8 +119,10 @@ public class MainActivity extends Activity implements MovieAdapter.ViewHolder.on
         intent.putExtra("Title", current.getTitle());
         intent.putExtra("BackdropPath", current.getBackdropPath());
         intent.putExtra("Overview", current.getOverview());
+        intent.putExtra("movieId", current.getId());
         String imgURL = config.getImageUrl(config.getBackdropSize(), current.getBackdropPath());
         intent.putExtra("imgURL", imgURL);
+        //getReviews();
         startActivity(intent);
     }
 }

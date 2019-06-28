@@ -8,6 +8,8 @@ public class Movie {
     private String overview;
     private String posterPath;
     private String backdropPath;
+    private String id;
+    private String review;
 
 
 
@@ -16,6 +18,8 @@ public class Movie {
         overview = object.getString("overview");
         posterPath = object.getString("poster_path");
         backdropPath = object.getString("backdrop_path");
+        id = object.getString("id");
+
 
 
     }
@@ -33,4 +37,12 @@ public class Movie {
     }
 
     public String getBackdropPath() { return backdropPath; }
+
+    public String getId(){return id; }
+
+    public void putReview(String newReview){
+        review = newReview;
+    }
+
+    public String getReview(){ return review; }
 }

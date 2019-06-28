@@ -72,7 +72,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
         ImageView imageView = isPortrait ? holder.ivPosterImage : holder.ivBackdropImage;
         Glide.with(context)
                 .load(imageUrl)
-
                 .placeholder(placeHolderId)
                 .error(placeHolderId)
                 .bitmapTransform(new RoundedCornersTransformation(context, radius, margin))
@@ -100,7 +99,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
             ivBackdropImage = (ImageView) itemView.findViewById(R.id.ivBackdropImage);
             tvTitle = (TextView) itemView.findViewById(R.id.tvTitle2);
             tvOverview = (TextView) itemView.findViewById(R.id.tvOverview2);
-            tvOverview.setMovementMethod(new ScrollingMovementMethod());
             this.onMovieListener = onMovieListener;
             itemView.setOnClickListener(this);
 
